@@ -5,7 +5,7 @@ A custom audio circular progress view for iOS.
 ##Preview
 ====================
 
-![preview](https://github.com/nijino/CircularProgressView/blob/master/ScreenShot.png)
+![preview](https://github.com/nijino/CircularProgressView/blob/master/ScreenShot.png?raw=true)
 
 ##Installation
 ====================
