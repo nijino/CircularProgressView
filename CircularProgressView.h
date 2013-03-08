@@ -23,7 +23,8 @@
           audioPath:(NSString *)path;
 - (void)play;
 - (void)pause;
-- (void)stop;
+- (void)revert;
+
 
 @end
 

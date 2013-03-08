@@ -85,7 +85,7 @@
     }
 }
 
-- (void)stop{
+- (void)revert{
     [self.player stop];
     self.player.currentTime = 0;
     [self updateProgressCircle];

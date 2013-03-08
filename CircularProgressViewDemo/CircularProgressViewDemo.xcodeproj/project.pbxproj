@@ -15,12 +15,14 @@
 		D643A86D16E1A83C00CDCFFB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D643A86B16E1A83C00CDCFFB /* InfoPlist.strings */; };
 		D643A86F16E1A83C00CDCFFB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D643A86E16E1A83C00CDCFFB /* main.m */; };
 		D643A87316E1A83D00CDCFFB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D643A87216E1A83D00CDCFFB /* AppDelegate.m */; };
-		D643A87516E1A83D00CDCFFB /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D643A87416E1A83D00CDCFFB /* Default.png */; };
-		D643A87716E1A83D00CDCFFB /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D643A87616E1A83D00CDCFFB /* Default@2x.png */; };
-		D643A87916E1A83D00CDCFFB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D643A87816E1A83D00CDCFFB /* Default-568h@2x.png */; };
 		D643A87C16E1A83D00CDCFFB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D643A87B16E1A83D00CDCFFB /* ViewController.m */; };
 		D643A87F16E1A83D00CDCFFB /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D643A87D16E1A83D00CDCFFB /* ViewController.xib */; };
 		D643A88716E1A91100CDCFFB /* CircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = D643A88616E1A91100CDCFFB /* CircularProgressView.m */; };
+		D680A89516E999440089BCC9 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D680A89416E999440089BCC9 /* Icon.png */; };
+		D680A89716E9994A0089BCC9 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D680A89616E9994A0089BCC9 /* Icon@2x.png */; };
+		D6F82A7816E9843500FC4602 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D6F82A7716E9843500FC4602 /* Default.png */; };
+		D6F82A7A16E9843D00FC4602 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6F82A7916E9843C00FC4602 /* Default@2x.png */; };
+		D6F82A7C16E9844700FC4602 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6F82A7B16E9844700FC4602 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,14 +38,16 @@
 		D643A87016E1A83D00CDCFFB /* CircularProgressViewDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CircularProgressViewDemo-Prefix.pch"; sourceTree = "<group>"; };
 		D643A87116E1A83D00CDCFFB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D643A87216E1A83D00CDCFFB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D643A87416E1A83D00CDCFFB /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		D643A87616E1A83D00CDCFFB /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		D643A87816E1A83D00CDCFFB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		D643A87A16E1A83D00CDCFFB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		D643A87B16E1A83D00CDCFFB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D643A87E16E1A83D00CDCFFB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
 		D643A88516E1A91100CDCFFB /* CircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CircularProgressView.h; path = ../CircularProgressView.h; sourceTree = "<group>"; };
 		D643A88616E1A91100CDCFFB /* CircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CircularProgressView.m; path = ../CircularProgressView.m; sourceTree = "<group>"; };
+		D680A89416E999440089BCC9 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
+		D680A89616E9994A0089BCC9 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
+		D6F82A7716E9843500FC4602 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
+		D6F82A7916E9843C00FC4602 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
+		D6F82A7B16E9844700FC4602 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,9 +115,11 @@
 				D643A86B16E1A83C00CDCFFB /* InfoPlist.strings */,
 				D643A86E16E1A83C00CDCFFB /* main.m */,
 				D643A87016E1A83D00CDCFFB /* CircularProgressViewDemo-Prefix.pch */,
-				D643A87416E1A83D00CDCFFB /* Default.png */,
-				D643A87616E1A83D00CDCFFB /* Default@2x.png */,
-				D643A87816E1A83D00CDCFFB /* Default-568h@2x.png */,
+				D6F82A7B16E9844700FC4602 /* Default-568h@2x.png */,
+				D6F82A7916E9843C00FC4602 /* Default@2x.png */,
+				D6F82A7716E9843500FC4602 /* Default.png */,
+				D680A89616E9994A0089BCC9 /* Icon@2x.png */,
+				D680A89416E999440089BCC9 /* Icon.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -179,11 +185,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D643A86D16E1A83C00CDCFFB /* InfoPlist.strings in Resources */,
-				D643A87516E1A83D00CDCFFB /* Default.png in Resources */,
-				D643A87716E1A83D00CDCFFB /* Default@2x.png in Resources */,
-				D643A87916E1A83D00CDCFFB /* Default-568h@2x.png in Resources */,
 				D643A87F16E1A83D00CDCFFB /* ViewController.xib in Resources */,
 				D63C808516E1D5D50004D76C /* In my song.mp3 in Resources */,
+				D6F82A7816E9843500FC4602 /* Default.png in Resources */,
+				D6F82A7A16E9843D00FC4602 /* Default@2x.png in Resources */,
+				D6F82A7C16E9844700FC4602 /* Default-568h@2x.png in Resources */,
+				D680A89516E999440089BCC9 /* Icon.png in Resources */,
+				D680A89716E9994A0089BCC9 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

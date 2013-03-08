@@ -1,6 +1,6 @@
 #CircularProgressView
 
-A custom audio circular progress view for iOS.
+A custom audio circular progress view for iOS.You can customlize its frame,background circle color & progress circirl color,circle width as you wish.
 
 ##Preview
 ====================
@@ -11,6 +11,7 @@ A custom audio circular progress view for iOS.
 ====================
 
 1.Add AVFoundation.framework into your project.
+
 2.Drop "CircularProgressView.h" & "CircularProgressView.m" into your project.
 
 ##Usage
@@ -40,15 +41,15 @@ self.circularProgressView.delegate = self;
  [self.view addSubview:self.circularProgressView];
  ```
  
- ##Methods
+##Methods
 ====================
 
-You can play,pause & stop audio by below methods declared in the header file `CircularProgressView.h`
+You can play,pause & revert audio by below methods declared in the header file `CircularProgressView.h`
 
 ```
 - (void)play;
 - (void)pause;
-- (void)stop;
+- (void)revert;
 ```
 
 ##Demo
@@ -63,13 +64,12 @@ You can find a demo project in this repository.
 - ARC
 
 ## Contact
-
-Nijino Saki
 ====================
 
+### nijino saki
 - http://github.com/nijino
 - http://www.weibo.com/nijinosaki
 
-My tech. blog:
-http://nijino_saki.blog.163.com
+My blog:
 
+- http://nijino_saki.blog.163.com_

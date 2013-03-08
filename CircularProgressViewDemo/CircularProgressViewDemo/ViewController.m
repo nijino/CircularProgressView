@@ -15,7 +15,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *timeLabel;
 - (IBAction)clickPlay:(id)sender;
 - (IBAction)clickPause:(id)sender;
-- (IBAction)clickStop:(id)sender;
+- (IBAction)clickRevert:(id)sender;
 
 @end
 
@@ -40,6 +40,9 @@
     
     //add CircularProgressView
     [self.view addSubview:self.circularProgressView];
+    
+    //set initial timeLabel
+    self.timeLabel.text = [NSString stringWithFormat:@"00:00/%@",[self formatTime:(int)self.circularProgressView.player.duration]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,15 +61,15 @@
     [self.circularProgressView pause];
 }
 
-- (IBAction)clickStop:(id)sender {
+- (IBAction)clickRevert:(id)sender {
     
-    [self.circularProgressView stop];
+    [self.circularProgressView revert];
 }
 
 #pragma mark Circular Progress View Delegate method
 - (void)didUpdateProgressView{
     //update timelabel
-    self.timeLabel.text = [self formatTime:(int)self.circularProgressView.player.currentTime];
+    self.timeLabel.text = [NSString stringWithFormat:@"%@/%@",[self formatTime:(int)self.circularProgressView.player.currentTime],[self formatTime:(int)self.circularProgressView.player.duration]];
 }
 
 //format audio time
