@@ -1,6 +1,6 @@
 #CircularProgressView
 
-A custom audio circular progress view for iOS.You can customlize its frame,background circle color & progress circirl color,circle width as you wish.
+A custom audio circular progress view for iOS.You can customlize its frame,background circle color & progress circle color,circle width as you wish.
 
 ##Preview
 ====================
@@ -28,11 +28,21 @@ Then, to create the object use a code like this:
 NSString *audioPath = [[NSBundle mainBundle] pathForResource:@"In my song" ofType:@"mp3"];
 
 //set back color & progress color
-UIColor *backColor = [UIColor colorWithRed:236.0/255.0 green:236.0/255.0 blue:236.0/255.0 alpha:1.0];
-UIColor *progressColor = [UIColor colorWithRed:82.0/255.0 green:135.0/255.0 blue:237.0/255.0 alpha:1.0];
+UIColor *backColor = [UIColor colorWithRed:236.0/255.0 
+									 green:236.0/255.0 
+									  blue:236.0/255.0 
+									 alpha:1.0];
+UIColor *progressColor = [UIColor colorWithRed:82.0/255.0 
+										green:135.0/255.0 
+										 blue:237.0/255.0 
+										alpha:1.0];
     
 //alloc CircularProgressView instance
-self.circularProgressView = [[CircularProgressView alloc] initWithFrame:CGRectMake(41, 57, 238, 238) backColor:backColor progressColor:progressColor lineWidth:30 audioPath:audioPath];
+self.circularProgressView = [[CircularProgressView alloc] initWithFrame:CGRectMake(41, 57, 238, 238) 
+															  backColor:backColor 
+														  progressColor:progressColor 
+															  lineWidth:30 
+															  audioPath:audioPath];
 
 //set CircularProgressView delegate
 self.circularProgressView.delegate = self;
@@ -72,4 +82,4 @@ You can find a demo project in this repository.
 
 My blog:
 
-- http://nijino_saki.blog.163.com_
+- http://nijino_saki.blog.163.com
