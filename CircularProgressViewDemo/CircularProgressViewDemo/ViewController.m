@@ -4,7 +4,8 @@
 //
 //  Created by nijino saki on 13-3-2.
 //  Copyright (c) 2013年 nijino. All rights reserved.
-//
+//  QQ:20118368
+//  http://nijino_saki.blog.163.com
 
 #import "ViewController.h"
 #import "CircularProgressView.h"
@@ -33,7 +34,11 @@
     UIColor *progressColor = [UIColor colorWithRed:82.0/255.0 green:135.0/255.0 blue:237.0/255.0 alpha:1.0];
     
     //alloc CircularProgressView instance
-    self.circularProgressView = [[CircularProgressView alloc] initWithFrame:CGRectMake(41, 57, 238, 238) backColor:backColor progressColor:progressColor lineWidth:30 audioPath:audioPath];
+    self.circularProgressView = [[CircularProgressView alloc] initWithFrame:CGRectMake(41, 57, 238, 238)
+                                                                  backColor:backColor
+                                                              progressColor:progressColor
+                                                                  lineWidth:30
+                                                                  audioPath:audioPath];
     
     //set CircularProgressView delegate
     self.circularProgressView.delegate = self;

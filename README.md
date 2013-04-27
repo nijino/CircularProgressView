@@ -80,6 +80,4 @@ You can find a demo project in this repository.
 - http://github.com/nijino
 - http://www.weibo.com/nijinosaki
 
-My blog:
-
-- http://nijino_saki.blog.163.com
+[My blog](http://nijino_saki.blog.163.com)
