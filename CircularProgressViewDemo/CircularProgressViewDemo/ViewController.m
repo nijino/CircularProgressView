@@ -56,8 +56,10 @@
 - (IBAction)clickPlayOrPause:(ToggleButton *)sender {
     if (sender.on) {
         [self.circularProgressView play];
+        self.circularProgressView.playOrPauseButtonIsPlaying = YES;
     }else {
         [self.circularProgressView pause];
+        self.circularProgressView.playOrPauseButtonIsPlaying = NO;
     }
 }
 
@@ -71,7 +73,11 @@
 #pragma mark Circular Progress View Delegate method
 - (void)updateProgressViewWithPlayer:(AVAudioPlayer *)player {
     //update timeLabel
-    self.timeLabel.text = [NSString stringWithFormat:@"%@/%@",[self formatTime:(int)player.currentTime],[self formatTime:(int)player.duration]];
+    self.timeLabel.text = [NSString stringWithFormat:@"%@/%@",[self formatTime:(int)player.currentTime],[self formatTime:(int)self.circularProgressView.duration]];
+}
+
+- (void)playerDidFinishPlaying{
+    self.playOrPauseButton.on = NO;
 }
 
 //format audio time

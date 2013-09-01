@@ -14,6 +14,7 @@
 @property (nonatomic) NSTimer *timer;
 @property (nonatomic) AVAudioPlayer *player;//an AVAudioPlayer instance
 @property (assign, nonatomic) float progress;
+@property (assign, nonatomic) CGFloat angle;//angle between two lines
 
 @end
 
@@ -60,7 +61,7 @@
     
     //draw background circle
     UIBezierPath *backCircle = [UIBezierPath bezierPathWithArcCenter:CGPointMake(CGRectGetWidth(self.bounds) / 2, CGRectGetHeight(self.bounds) / 2)
-                                                              radius:CGRectGetWidth(self.bounds) / 2 - self.lineWidth / 2
+                                                              radius:(CGRectGetWidth(self.bounds) - self.lineWidth) / 2
                                                           startAngle:(CGFloat) - M_PI_2
                                                             endAngle:(CGFloat)(1.5 * M_PI)
                                                            clockwise:YES];
@@ -71,7 +72,7 @@
     if (self.progress) {
         //draw progress circle
         UIBezierPath *progressCircle = [UIBezierPath bezierPathWithArcCenter:CGPointMake(CGRectGetWidth(self.bounds) / 2,CGRectGetHeight(self.bounds) / 2)
-                                                                      radius:CGRectGetWidth(self.bounds) / 2 - self.lineWidth / 2
+                                                                      radius:(CGRectGetWidth(self.bounds) - self.lineWidth) / 2
                                                                   startAngle:(CGFloat) - M_PI_2
                                                                     endAngle:(CGFloat)(- M_PI_2 + self.progress * 2 * M_PI)
                                                                    clockwise:YES];
@@ -124,7 +125,59 @@
         self.progress = 0;
         //self redraw
         [self setNeedsDisplay];
+        [self.delegate playerDidFinishPlaying];
     }
 }
 
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    UITouch *touch = [touches anyObject];
+    CGPoint point = [touch locationInView:self];
+    self.angle = [self angleFromStartToPoint:point];
+    if (self.player.playing) {
+        [self pause];
+    }
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+    UITouch *touch = [touches anyObject];
+    CGPoint point = [touch locationInView:self];
+    if (CGRectContainsPoint(self.bounds, point)) {
+        self.angle = [self angleFromStartToPoint:point];
+        self.player.currentTime = self.player.duration * (self.angle / (2 * M_PI));
+        [self updateProgressCircle];
+    }
+    
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    self.player.currentTime = self.player.duration * (self.angle / (2 * M_PI));
+    if (self.playOrPauseButtonIsPlaying) {
+        [self play];
+    }else {
+        [self updateProgressCircle];
+    }
+}
+
+//calculate angle between start to point
+- (CGFloat)angleFromStartToPoint:(CGPoint)point{
+    CGFloat angle = [self angleBetweenLinesWithLine1Start:CGPointMake(CGRectGetWidth(self.bounds) / 2,CGRectGetHeight(self.bounds) / 2) Line1End:CGPointMake(CGRectGetWidth(self.bounds) / 2,CGRectGetHeight(self.bounds) / 2 - 1) Line2Start:CGPointMake(CGRectGetWidth(self.bounds) / 2,CGRectGetHeight(self.bounds) / 2) Line2End:point];
+    if (CGRectContainsPoint(CGRectMake(0, 0, CGRectGetWidth(self.frame) / 2, CGRectGetHeight(self.frame)), point)) {
+        angle = 2 * M_PI - angle;
+    }
+    return angle;
+}
+
+
+//caculate angle between 2 lines
+- (CGFloat)angleBetweenLinesWithLine1Start:(CGPoint)line1Start
+                                  Line1End:(CGPoint)line1End
+                                Line2Start:(CGPoint)line2Start
+                                  Line2End:(CGPoint)line2End{
+    CGFloat a = line1End.x - line1Start.x;
+    CGFloat b = line1End.y - line1Start.y;
+    CGFloat c = line2End.x - line2Start.x;
+    CGFloat d = line2End.y - line2Start.y;
+    return acos(((a*c) + (b*d)) / ((sqrt(a*a + b*b)) * (sqrt(c*c + d*d))));
+}
 @end

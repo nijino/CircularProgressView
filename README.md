@@ -82,6 +82,9 @@ You can play,pause & stop audio by below methods declared in the header file `Ci
 You can find a demo project in this repository.    
 
 ##Version History   
+- version 1.3  
+Add response drag progress view gesture.
+  
 - version 1.2  
 Add initWithCoder method for creating instance from interface builder.
  

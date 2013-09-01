@@ -15,6 +15,7 @@
 @optional
 
 - (void)updateProgressViewWithPlayer:(AVAudioPlayer *)player;
+- (void)playerDidFinishPlaying;
 
 @end
 
@@ -25,6 +26,7 @@
 @property (copy, nonatomic) NSString *audioPath;
 @property (assign, nonatomic) CGFloat lineWidth;
 @property (assign, nonatomic) NSTimeInterval duration;
+@property (assign, nonatomic) BOOL playOrPauseButtonIsPlaying;
 @property (assign, nonatomic) id <CircularProgressViewDelegate> delegate;
 
 - (id)initWithFrame:(CGRect)frame
