@@ -5,32 +5,36 @@
 //  Created by nijino saki on 13-3-2.
 //  Copyright (c) 2013年 nijino. All rights reserved.
 //  QQ:20118368
-//  http://nijino_saki.blog.163.com
+//  http://nijino.cn
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
-@protocol CircularProgressDelegate;
+@protocol CircularProgressViewDelegate <NSObject>
+
+@optional
+
+- (void)updateProgressViewWithPlayer:(AVAudioPlayer *)player;
+
+@end
 
 @interface CircularProgressView : UIView
 
-@property (strong, nonatomic) AVAudioPlayer *player;//an AVAudioPlayer instance
-@property (assign, nonatomic) id <CircularProgressDelegate> delegate;
+@property (nonatomic) UIColor *backColor;
+@property (nonatomic) UIColor *progressColor;
+@property (copy, nonatomic) NSString *audioPath;
+@property (assign, nonatomic) CGFloat lineWidth;
+@property (assign, nonatomic) NSTimeInterval duration;
+@property (assign, nonatomic) id <CircularProgressViewDelegate> delegate;
 
 - (id)initWithFrame:(CGRect)frame
           backColor:(UIColor *)backColor
       progressColor:(UIColor *)progressColor
           lineWidth:(CGFloat)lineWidth
           audioPath:(NSString *)path;
+
 - (void)play;
 - (void)pause;
-- (void)revert;
-
-
-@end
-
-@protocol CircularProgressDelegate <NSObject>
-
-- (void)didUpdateProgressView;
+- (void)stop;
 
 @end

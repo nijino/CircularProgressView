@@ -5,17 +5,15 @@
 //  Created by nijino saki on 13-3-2.
 //  Copyright (c) 2013年 nijino. All rights reserved.
 //  QQ:20118368
-//  http://nijino_saki.blog.163.com
+//  http://nijino.cn
 
 #import "CircularProgressView.h"
 
 @interface CircularProgressView ()<AVAudioPlayerDelegate>
 
-@property (strong, nonatomic) UIColor *backColor;
-@property (strong, nonatomic) UIColor *progressColor;
-@property (assign, nonatomic) CGFloat lineWidth;
+@property (nonatomic) NSTimer *timer;
+@property (nonatomic) AVAudioPlayer *player;//an AVAudioPlayer instance
 @property (assign, nonatomic) float progress;
-@property (strong, nonatomic) NSTimer *timer;
 
 @end
 
@@ -25,11 +23,9 @@
           backColor:(UIColor *)backColor
       progressColor:(UIColor *)progressColor
           lineWidth:(CGFloat)lineWidth
-          audioPath:(NSString *)path
-{
+          audioPath:(NSString *)path {
     self = [super initWithFrame:frame];
     if (self) {
-
         self.backgroundColor = [UIColor clearColor];
         _backColor = backColor;
         _progressColor = progressColor;
@@ -38,15 +34,33 @@
         _player.delegate = self;
         [_player prepareToPlay];
     }
-    
     return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        self.backgroundColor = [UIColor clearColor];
+    }
+    return self;
+}
+
+- (void)setAudioPath:(NSString *)audioPath{
+    if (audioPath.length) {
+        self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:audioPath] error:nil];
+        self.player.delegate = self;
+        self.duration = self.player.duration;
+        [self.player prepareToPlay];
+    }
 }
 
 - (void)drawRect:(CGRect)rect
 {
+    [super drawRect:rect];
+    
     //draw background circle
-    UIBezierPath *backCircle = [UIBezierPath bezierPathWithArcCenter:CGPointMake(self.bounds.size.width / 2,self.bounds.size.height / 2)
-                                                              radius:self.bounds.size.width / 2 - self.lineWidth / 2
+    UIBezierPath *backCircle = [UIBezierPath bezierPathWithArcCenter:CGPointMake(CGRectGetWidth(self.bounds) / 2, CGRectGetHeight(self.bounds) / 2)
+                                                              radius:CGRectGetWidth(self.bounds) / 2 - self.lineWidth / 2
                                                           startAngle:(CGFloat) - M_PI_2
                                                             endAngle:(CGFloat)(1.5 * M_PI)
                                                            clockwise:YES];
@@ -54,10 +68,10 @@
     backCircle.lineWidth = self.lineWidth;
     [backCircle stroke];
     
-    if (self.progress != 0) {
+    if (self.progress) {
         //draw progress circle
-        UIBezierPath *progressCircle = [UIBezierPath bezierPathWithArcCenter:CGPointMake(self.bounds.size.width / 2,self.bounds.size.height / 2)
-                                                                      radius:self.bounds.size.width / 2 - self.lineWidth / 2
+        UIBezierPath *progressCircle = [UIBezierPath bezierPathWithArcCenter:CGPointMake(CGRectGetWidth(self.bounds) / 2,CGRectGetHeight(self.bounds) / 2)
+                                                                      radius:CGRectGetWidth(self.bounds) / 2 - self.lineWidth / 2
                                                                   startAngle:(CGFloat) - M_PI_2
                                                                     endAngle:(CGFloat)(- M_PI_2 + self.progress * 2 * M_PI)
                                                                    clockwise:YES];
@@ -73,8 +87,8 @@
     //redraw back & progress circles
     [self setNeedsDisplay];
     
-    if (self.delegate && [self.delegate conformsToProtocol:@protocol(CircularProgressDelegate)]) {
-        [self.delegate didUpdateProgressView];
+    if (self.delegate && [self.delegate conformsToProtocol:@protocol(CircularProgressViewDelegate)]) {
+        [self.delegate updateProgressViewWithPlayer:self.player];
     }
 }
 
@@ -83,7 +97,7 @@
     if (!self.player.playing) {
         //alloc timer,interval:0.1 second
         self.timer = [NSTimer scheduledTimerWithTimeInterval:0.1f target:self selector:@selector(updateProgressCircle) userInfo:nil repeats:YES];
-        [self.timer fire];
+        [self.timer setFireDate:[NSDate dateWithTimeIntervalSinceNow:0.25]];
         [self.player play];
     }
 }
@@ -95,7 +109,7 @@
     }
 }
 
-- (void)revert{
+- (void)stop{
     [self.player stop];
     self.player.currentTime = 0;
     [self updateProgressCircle];

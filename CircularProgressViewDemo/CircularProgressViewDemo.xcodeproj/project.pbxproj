@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D61910CA17CFAA8900EAC2F1 /* pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D61910C717CFAA8900EAC2F1 /* pause@2x.png */; };
+		D61910CB17CFAA8900EAC2F1 /* play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D61910C817CFAA8900EAC2F1 /* play@2x.png */; };
+		D61910CC17CFAA8900EAC2F1 /* stop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D61910C917CFAA8900EAC2F1 /* stop@2x.png */; };
+		D637E9B717D374C90045466E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D637E9B617D374C90045466E /* Default-568h@2x.png */; };
+		D637E9B917D375490045466E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D637E9B817D375490045466E /* Default@2x.png */; };
 		D63C807F16E1C4C50004D76C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D63C807E16E1C4C50004D76C /* AVFoundation.framework */; };
 		D63C808516E1D5D50004D76C /* In my song.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D63C808416E1D5D50004D76C /* In my song.mp3 */; };
 		D643A86316E1A83C00CDCFFB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D643A86216E1A83C00CDCFFB /* UIKit.framework */; };
@@ -18,14 +23,17 @@
 		D643A87C16E1A83D00CDCFFB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D643A87B16E1A83D00CDCFFB /* ViewController.m */; };
 		D643A87F16E1A83D00CDCFFB /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D643A87D16E1A83D00CDCFFB /* ViewController.xib */; };
 		D643A88716E1A91100CDCFFB /* CircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = D643A88616E1A91100CDCFFB /* CircularProgressView.m */; };
+		D64F9AD517CF88E600FF0238 /* ToggleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D64F9AD417CF88E600FF0238 /* ToggleButton.m */; };
 		D680A89516E999440089BCC9 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D680A89416E999440089BCC9 /* Icon.png */; };
 		D680A89716E9994A0089BCC9 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D680A89616E9994A0089BCC9 /* Icon@2x.png */; };
-		D6F82A7816E9843500FC4602 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D6F82A7716E9843500FC4602 /* Default.png */; };
-		D6F82A7A16E9843D00FC4602 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6F82A7916E9843C00FC4602 /* Default@2x.png */; };
-		D6F82A7C16E9844700FC4602 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6F82A7B16E9844700FC4602 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D61910C717CFAA8900EAC2F1 /* pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause@2x.png"; sourceTree = "<group>"; };
+		D61910C817CFAA8900EAC2F1 /* play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play@2x.png"; sourceTree = "<group>"; };
+		D61910C917CFAA8900EAC2F1 /* stop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stop@2x.png"; sourceTree = "<group>"; };
+		D637E9B617D374C90045466E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		D637E9B817D375490045466E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		D63C807E16E1C4C50004D76C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D63C808416E1D5D50004D76C /* In my song.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "In my song.mp3"; sourceTree = "<group>"; };
 		D643A85F16E1A83C00CDCFFB /* CircularProgressViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CircularProgressViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,11 +51,10 @@
 		D643A87E16E1A83D00CDCFFB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
 		D643A88516E1A91100CDCFFB /* CircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CircularProgressView.h; path = ../CircularProgressView.h; sourceTree = "<group>"; };
 		D643A88616E1A91100CDCFFB /* CircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CircularProgressView.m; path = ../CircularProgressView.m; sourceTree = "<group>"; };
+		D64F9AD317CF88E600FF0238 /* ToggleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToggleButton.h; sourceTree = "<group>"; };
+		D64F9AD417CF88E600FF0238 /* ToggleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToggleButton.m; sourceTree = "<group>"; };
 		D680A89416E999440089BCC9 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
 		D680A89616E9994A0089BCC9 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
-		D6F82A7716E9843500FC4602 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
-		D6F82A7916E9843C00FC4602 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
-		D6F82A7B16E9844700FC4602 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +109,8 @@
 				D643A87A16E1A83D00CDCFFB /* ViewController.h */,
 				D643A87B16E1A83D00CDCFFB /* ViewController.m */,
 				D643A87D16E1A83D00CDCFFB /* ViewController.xib */,
+				D64F9AD317CF88E600FF0238 /* ToggleButton.h */,
+				D64F9AD417CF88E600FF0238 /* ToggleButton.m */,
 				D643A86916E1A83C00CDCFFB /* Supporting Files */,
 			);
 			path = CircularProgressViewDemo;
@@ -115,11 +124,13 @@
 				D643A86B16E1A83C00CDCFFB /* InfoPlist.strings */,
 				D643A86E16E1A83C00CDCFFB /* main.m */,
 				D643A87016E1A83D00CDCFFB /* CircularProgressViewDemo-Prefix.pch */,
-				D6F82A7B16E9844700FC4602 /* Default-568h@2x.png */,
-				D6F82A7916E9843C00FC4602 /* Default@2x.png */,
-				D6F82A7716E9843500FC4602 /* Default.png */,
 				D680A89616E9994A0089BCC9 /* Icon@2x.png */,
 				D680A89416E999440089BCC9 /* Icon.png */,
+				D637E9B817D375490045466E /* Default@2x.png */,
+				D637E9B617D374C90045466E /* Default-568h@2x.png */,
+				D61910C717CFAA8900EAC2F1 /* pause@2x.png */,
+				D61910C817CFAA8900EAC2F1 /* play@2x.png */,
+				D61910C917CFAA8900EAC2F1 /* stop@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -184,14 +195,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D61910CB17CFAA8900EAC2F1 /* play@2x.png in Resources */,
 				D643A86D16E1A83C00CDCFFB /* InfoPlist.strings in Resources */,
 				D643A87F16E1A83D00CDCFFB /* ViewController.xib in Resources */,
 				D63C808516E1D5D50004D76C /* In my song.mp3 in Resources */,
-				D6F82A7816E9843500FC4602 /* Default.png in Resources */,
-				D6F82A7A16E9843D00FC4602 /* Default@2x.png in Resources */,
-				D6F82A7C16E9844700FC4602 /* Default-568h@2x.png in Resources */,
+				D637E9B717D374C90045466E /* Default-568h@2x.png in Resources */,
+				D61910CA17CFAA8900EAC2F1 /* pause@2x.png in Resources */,
+				D61910CC17CFAA8900EAC2F1 /* stop@2x.png in Resources */,
 				D680A89516E999440089BCC9 /* Icon.png in Resources */,
 				D680A89716E9994A0089BCC9 /* Icon@2x.png in Resources */,
+				D637E9B917D375490045466E /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +219,7 @@
 				D643A87316E1A83D00CDCFFB /* AppDelegate.m in Sources */,
 				D643A87C16E1A83D00CDCFFB /* ViewController.m in Sources */,
 				D643A88716E1A91100CDCFFB /* CircularProgressView.m in Sources */,
+				D64F9AD517CF88E600FF0238 /* ToggleButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +307,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CircularProgressViewDemo/CircularProgressViewDemo-Prefix.pch";
 				INFOPLIST_FILE = "CircularProgressViewDemo/CircularProgressViewDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -304,6 +319,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CircularProgressViewDemo/CircularProgressViewDemo-Prefix.pch";
 				INFOPLIST_FILE = "CircularProgressViewDemo/CircularProgressViewDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

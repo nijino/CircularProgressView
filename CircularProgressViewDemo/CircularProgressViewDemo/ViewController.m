@@ -5,18 +5,19 @@
 //  Created by nijino saki on 13-3-2.
 //  Copyright (c) 2013年 nijino. All rights reserved.
 //  QQ:20118368
-//  http://nijino_saki.blog.163.com
+//  http://nijino.cn
 
 #import "ViewController.h"
 #import "CircularProgressView.h"
+#import "ToggleButton.h"
 
-@interface ViewController () <CircularProgressDelegate>
+@interface ViewController () <CircularProgressViewDelegate>
+@property (unsafe_unretained, nonatomic) IBOutlet ToggleButton *playOrPauseButton;
 
-@property (strong, nonatomic) CircularProgressView *circularProgressView;
-@property (strong, nonatomic) IBOutlet UILabel *timeLabel;
-- (IBAction)clickPlay:(id)sender;
-- (IBAction)clickPause:(id)sender;
-- (IBAction)clickRevert:(id)sender;
+@property (unsafe_unretained, nonatomic) IBOutlet CircularProgressView *circularProgressView;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *timeLabel;
+- (IBAction)clickPlayOrPause:(ToggleButton *)sender;
+- (IBAction)clickStop:(id)sender;
 
 @end
 
@@ -26,28 +27,24 @@
 {
     [super viewDidLoad];
     
-    //get a audio path
-    NSString *audioPath = [[NSBundle mainBundle] pathForResource:@"In my song" ofType:@"mp3"];
-   
-    //set backcolor & progresscolor
-    UIColor *backColor = [UIColor colorWithRed:236.0/255.0 green:236.0/255.0 blue:236.0/255.0 alpha:1.0];
-    UIColor *progressColor = [UIColor colorWithRed:82.0/255.0 green:135.0/255.0 blue:237.0/255.0 alpha:1.0];
+    self.circularProgressView.backColor = [UIColor colorWithRed:236.0 / 255.0
+                                                          green:236.0 / 255.0
+                                                           blue:236.0 / 255.0
+                                                          alpha:1.0];
+    self.circularProgressView.progressColor = [UIColor colorWithRed:82.0 / 255.0
+                                                              green:135.0 / 255.0
+                                                               blue:237.0 / 255.0
+                                                              alpha:1.0];
+    self.circularProgressView.audioPath = [[NSBundle mainBundle] pathForResource:@"In my song"
+                                                                          ofType:@"mp3"];
     
-    //alloc CircularProgressView instance
-    self.circularProgressView = [[CircularProgressView alloc] initWithFrame:CGRectMake(41, 57, 238, 238)
-                                                                  backColor:backColor
-                                                              progressColor:progressColor
-                                                                  lineWidth:30
-                                                                  audioPath:audioPath];
+    self.circularProgressView.lineWidth = 20;
     
     //set CircularProgressView delegate
     self.circularProgressView.delegate = self;
     
-    //add CircularProgressView
-    [self.view addSubview:self.circularProgressView];
-    
     //set initial timeLabel
-    self.timeLabel.text = [NSString stringWithFormat:@"00:00/%@",[self formatTime:(int)self.circularProgressView.player.duration]];
+    self.timeLabel.text = [NSString stringWithFormat:@"00:00/%@",[self formatTime:(int)self.circularProgressView.duration]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,25 +53,25 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)clickPlay:(id)sender {
-    
-    [self.circularProgressView play];
+- (IBAction)clickPlayOrPause:(ToggleButton *)sender {
+    if (sender.on) {
+        [self.circularProgressView play];
+    }else {
+        [self.circularProgressView pause];
+    }
 }
 
-- (IBAction)clickPause:(id)sender {
-
-    [self.circularProgressView pause];
-}
-
-- (IBAction)clickRevert:(id)sender {
+- (IBAction)clickStop:(id)sender {
     
-    [self.circularProgressView revert];
+    [self.circularProgressView stop];
+    self.playOrPauseButton.on = NO;
+    
 }
 
 #pragma mark Circular Progress View Delegate method
-- (void)didUpdateProgressView{
-    //update timelabel
-    self.timeLabel.text = [NSString stringWithFormat:@"%@/%@",[self formatTime:(int)self.circularProgressView.player.currentTime],[self formatTime:(int)self.circularProgressView.player.duration]];
+- (void)updateProgressViewWithPlayer:(AVAudioPlayer *)player {
+    //update timeLabel
+    self.timeLabel.text = [NSString stringWithFormat:@"%@/%@",[self formatTime:(int)player.currentTime],[self formatTime:(int)player.duration]];
 }
 
 //format audio time
@@ -91,5 +88,10 @@
 - (void)viewDidUnload {
     [self setTimeLabel:nil];
     [super viewDidUnload];
+}
+
+
+- (BOOL)shouldAutorotate{
+    return YES;
 }
 @end
