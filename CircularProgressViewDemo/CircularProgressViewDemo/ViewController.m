@@ -67,6 +67,7 @@
     
     [self.circularProgressView stop];
     self.playOrPauseButton.on = NO;
+    self.circularProgressView.playOrPauseButtonIsPlaying = NO;
     
 }
 

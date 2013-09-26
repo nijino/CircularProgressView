@@ -31,6 +31,10 @@
         _backColor = backColor;
         _progressColor = progressColor;
         _lineWidth = lineWidth;
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
+        [self addGestureRecognizer:tapGesture];
+        UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
+        [self addGestureRecognizer:panGesture];
         _player = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path] error:nil];
         _player.delegate = self;
         [_player prepareToPlay];
@@ -42,6 +46,10 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
+        [self addGestureRecognizer:tapGesture];
+        UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
+        [self addGestureRecognizer:panGesture];
     }
     return self;
 }
@@ -129,35 +137,21 @@
     }
 }
 
-
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    UITouch *touch = [touches anyObject];
-    CGPoint point = [touch locationInView:self];
-    self.angle = [self angleFromStartToPoint:point];
-    if (self.player.playing) {
-        [self pause];
-    }
-}
-
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
-    UITouch *touch = [touches anyObject];
-    CGPoint point = [touch locationInView:self];
+- (void)handleGesture:(UIGestureRecognizer *)recognizer{
+    CGPoint point = [recognizer locationInView:self];
     if (CGRectContainsPoint(self.bounds, point)) {
-        self.angle = [self angleFromStartToPoint:point];
+        [self pause];
+        self.angle = [self angleFromStartToPoint:[recognizer locationInView:self]];
         self.player.currentTime = self.player.duration * (self.angle / (2 * M_PI));
         [self updateProgressCircle];
+        if (recognizer.state == UIGestureRecognizerStateEnded) {
+            if (self.playOrPauseButtonIsPlaying) {
+                [self play];
+            }
+        }
     }
-    
 }
 
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-    self.player.currentTime = self.player.duration * (self.angle / (2 * M_PI));
-    if (self.playOrPauseButtonIsPlaying) {
-        [self play];
-    }else {
-        [self updateProgressCircle];
-    }
-}
 
 //calculate angle between start to point
 - (CGFloat)angleFromStartToPoint:(CGPoint)point{
@@ -169,7 +163,7 @@
 }
 
 
-//caculate angle between 2 lines
+//calculate angle between 2 lines
 - (CGFloat)angleBetweenLinesWithLine1Start:(CGPoint)line1Start
                                   Line1End:(CGPoint)line1End
                                 Line2Start:(CGPoint)line2Start

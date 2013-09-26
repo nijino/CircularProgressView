@@ -1,10 +1,10 @@
-![preview](https://github.com/nijino/CircularProgressView/blob/master/ScreenShot.png?raw=true)
+![preview](https://github.com/nijino/CircularProgressView/blob/master/ScreenShot.gif?raw=true)
 
 ##Introduction
 A custom audio circular progress view for iOS.You can customlize its frame,background circle color & progress circle color and circle width as you wish.    
 
 ##Latest Update  
-Now you can add circular progress view through interface builder.You can find the way in Usage section.
+Now you can drag the progress to precise location to where it should to play.
 
 ##Installation
 1.Add AVFoundation.framework into your project.  
