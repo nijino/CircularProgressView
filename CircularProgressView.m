@@ -56,10 +56,10 @@
 }
 
 - (void)setLineWidth:(CGFloat)lineWidth{
-    CAShapeLayer *backgroundLayer = [self createRingLayerWithCenter:CGPointMake(CGRectGetWidth(self.frame) / 2, CGRectGetHeight(self.frame) / 2) radius:self.bounds.size.width / 2 lineWidth:lineWidth color:self.backColor];
+    CAShapeLayer *backgroundLayer = [self createRingLayerWithCenter:CGPointMake(CGRectGetWidth(self.frame) / 2, CGRectGetHeight(self.frame) / 2) radius:CGRectGetWidth(self.bounds) / 2 - lineWidth / 2 lineWidth:lineWidth color:self.backColor];
     _lineWidth = lineWidth;
     [self.layer addSublayer:backgroundLayer];
-    _progressLayer = [self createRingLayerWithCenter:CGPointMake(CGRectGetWidth(self.frame) / 2, CGRectGetHeight(self.frame) / 2) radius:self.bounds.size.width / 2 lineWidth:lineWidth color:self.progressColor];
+    _progressLayer = [self createRingLayerWithCenter:CGPointMake(CGRectGetWidth(self.frame) / 2, CGRectGetHeight(self.frame) / 2) radius:CGRectGetWidth(self.bounds) / 2 - lineWidth / 2 lineWidth:lineWidth color:self.progressColor];
     _progressLayer.strokeEnd = 0;
     [self.layer addSublayer:_progressLayer];
 }
@@ -74,9 +74,7 @@
 }
 
 - (CAShapeLayer *)createRingLayerWithCenter:(CGPoint)center radius:(CGFloat)radius lineWidth:(CGFloat)lineWidth color:(UIColor *)color {
-
     UIBezierPath* smoothedPath = [UIBezierPath bezierPathWithArcCenter:CGPointMake(radius, radius) radius:radius startAngle:-M_PI_2 endAngle:(M_PI + M_PI_2) clockwise:YES];
-
     CAShapeLayer *slice = [CAShapeLayer layer];
     slice.contentsScale = [[UIScreen mainScreen] scale];
     slice.frame = CGRectMake(center.x-radius, center.y-radius, radius*2, radius*2);
