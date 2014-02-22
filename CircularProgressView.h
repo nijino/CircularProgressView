@@ -15,6 +15,7 @@
 @optional
 
 - (void)updateProgressViewWithPlayer:(AVAudioPlayer *)player;
+- (void)updatePlayOrPauseButton;
 - (void)playerDidFinishPlaying;
 
 @end
@@ -23,7 +24,7 @@
 
 @property (nonatomic) UIColor *backColor;
 @property (nonatomic) UIColor *progressColor;
-@property (copy, nonatomic) NSString *audioPath;
+@property (copy, nonatomic) NSURL *audioPath;
 @property (assign, nonatomic) CGFloat lineWidth;
 @property (assign, nonatomic) NSTimeInterval duration;
 @property (assign, nonatomic) BOOL playOrPauseButtonIsPlaying;
@@ -33,7 +34,7 @@
           backColor:(UIColor *)backColor
       progressColor:(UIColor *)progressColor
           lineWidth:(CGFloat)lineWidth
-          audioPath:(NSString *)path;
+          audioPath:(NSURL *)path;
 
 - (void)play;
 - (void)pause;

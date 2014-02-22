@@ -8,8 +8,8 @@
 //  http://nijino.cn
 
 #import "AppDelegate.h"
-
 #import "ViewController.h"
+#import <AVFoundation/AVFoundation.h>
 
 @implementation AppDelegate
 
@@ -20,6 +20,13 @@
     self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+    [[AVAudioSession sharedInstance] setActive:YES error:nil];
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    return YES;
+}
+
+- (BOOL)canBecomeFirstResponder{
     return YES;
 }
 

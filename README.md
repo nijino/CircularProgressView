@@ -81,7 +81,11 @@ You can play,pause & stop audio by below methods declared in the header file `Ci
 ##Demo
 You can find a demo project in this repository.    
 
-##Version History   
+##Version History  
+- version 1.4  
+Update to supporting Xcode5.
+Add animation to tap & drag gesture.
+ 
 - version 1.3  
 Add response drag progress view gesture.
   

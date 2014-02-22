@@ -7,13 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D61910CA17CFAA8900EAC2F1 /* pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D61910C717CFAA8900EAC2F1 /* pause@2x.png */; };
-		D61910CB17CFAA8900EAC2F1 /* play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D61910C817CFAA8900EAC2F1 /* play@2x.png */; };
-		D61910CC17CFAA8900EAC2F1 /* stop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D61910C917CFAA8900EAC2F1 /* stop@2x.png */; };
-		D637E9B717D374C90045466E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D637E9B617D374C90045466E /* Default-568h@2x.png */; };
-		D637E9B917D375490045466E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D637E9B817D375490045466E /* Default@2x.png */; };
+		D609F70E1803A606005244C0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D609F70D1803A606005244C0 /* Images.xcassets */; };
 		D63C807F16E1C4C50004D76C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D63C807E16E1C4C50004D76C /* AVFoundation.framework */; };
-		D63C808516E1D5D50004D76C /* In my song.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D63C808416E1D5D50004D76C /* In my song.mp3 */; };
+		D63C808516E1D5D50004D76C /* 我的歌声里.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D63C808416E1D5D50004D76C /* 我的歌声里.mp3 */; };
 		D643A86316E1A83C00CDCFFB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D643A86216E1A83C00CDCFFB /* UIKit.framework */; };
 		D643A86516E1A83C00CDCFFB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D643A86416E1A83C00CDCFFB /* Foundation.framework */; };
 		D643A86716E1A83C00CDCFFB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D643A86616E1A83C00CDCFFB /* CoreGraphics.framework */; };
@@ -24,18 +20,13 @@
 		D643A87F16E1A83D00CDCFFB /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D643A87D16E1A83D00CDCFFB /* ViewController.xib */; };
 		D643A88716E1A91100CDCFFB /* CircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = D643A88616E1A91100CDCFFB /* CircularProgressView.m */; };
 		D64F9AD517CF88E600FF0238 /* ToggleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D64F9AD417CF88E600FF0238 /* ToggleButton.m */; };
-		D680A89516E999440089BCC9 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D680A89416E999440089BCC9 /* Icon.png */; };
-		D680A89716E9994A0089BCC9 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D680A89616E9994A0089BCC9 /* Icon@2x.png */; };
+		D6D6DF2618B7D5CA0036FD1C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D6DF2518B7D5CA0036FD1C /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D61910C717CFAA8900EAC2F1 /* pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause@2x.png"; sourceTree = "<group>"; };
-		D61910C817CFAA8900EAC2F1 /* play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play@2x.png"; sourceTree = "<group>"; };
-		D61910C917CFAA8900EAC2F1 /* stop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stop@2x.png"; sourceTree = "<group>"; };
-		D637E9B617D374C90045466E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
-		D637E9B817D375490045466E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
+		D609F70D1803A606005244C0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D63C807E16E1C4C50004D76C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		D63C808416E1D5D50004D76C /* In my song.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "In my song.mp3"; sourceTree = "<group>"; };
+		D63C808416E1D5D50004D76C /* 我的歌声里.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "我的歌声里.mp3"; sourceTree = "<group>"; };
 		D643A85F16E1A83C00CDCFFB /* CircularProgressViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CircularProgressViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D643A86216E1A83C00CDCFFB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D643A86416E1A83C00CDCFFB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -53,8 +44,7 @@
 		D643A88616E1A91100CDCFFB /* CircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CircularProgressView.m; path = ../CircularProgressView.m; sourceTree = "<group>"; };
 		D64F9AD317CF88E600FF0238 /* ToggleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToggleButton.h; sourceTree = "<group>"; };
 		D64F9AD417CF88E600FF0238 /* ToggleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToggleButton.m; sourceTree = "<group>"; };
-		D680A89416E999440089BCC9 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
-		D680A89616E9994A0089BCC9 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
+		D6D6DF2518B7D5CA0036FD1C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6D6DF2618B7D5CA0036FD1C /* QuartzCore.framework in Frameworks */,
 				D63C807F16E1C4C50004D76C /* AVFoundation.framework in Frameworks */,
 				D643A86316E1A83C00CDCFFB /* UIKit.framework in Frameworks */,
 				D643A86516E1A83C00CDCFFB /* Foundation.framework in Frameworks */,
@@ -93,6 +84,7 @@
 		D643A86116E1A83C00CDCFFB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D6D6DF2518B7D5CA0036FD1C /* QuartzCore.framework */,
 				D63C807E16E1C4C50004D76C /* AVFoundation.framework */,
 				D643A86216E1A83C00CDCFFB /* UIKit.framework */,
 				D643A86416E1A83C00CDCFFB /* Foundation.framework */,
@@ -111,6 +103,7 @@
 				D643A87D16E1A83D00CDCFFB /* ViewController.xib */,
 				D64F9AD317CF88E600FF0238 /* ToggleButton.h */,
 				D64F9AD417CF88E600FF0238 /* ToggleButton.m */,
+				D609F70D1803A606005244C0 /* Images.xcassets */,
 				D643A86916E1A83C00CDCFFB /* Supporting Files */,
 			);
 			path = CircularProgressViewDemo;
@@ -119,18 +112,11 @@
 		D643A86916E1A83C00CDCFFB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D63C808416E1D5D50004D76C /* In my song.mp3 */,
+				D63C808416E1D5D50004D76C /* 我的歌声里.mp3 */,
 				D643A86A16E1A83C00CDCFFB /* CircularProgressViewDemo-Info.plist */,
 				D643A86B16E1A83C00CDCFFB /* InfoPlist.strings */,
 				D643A86E16E1A83C00CDCFFB /* main.m */,
 				D643A87016E1A83D00CDCFFB /* CircularProgressViewDemo-Prefix.pch */,
-				D680A89616E9994A0089BCC9 /* Icon@2x.png */,
-				D680A89416E999440089BCC9 /* Icon.png */,
-				D637E9B817D375490045466E /* Default@2x.png */,
-				D637E9B617D374C90045466E /* Default-568h@2x.png */,
-				D61910C717CFAA8900EAC2F1 /* pause@2x.png */,
-				D61910C817CFAA8900EAC2F1 /* play@2x.png */,
-				D61910C917CFAA8900EAC2F1 /* stop@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -171,7 +157,17 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0460;
-				ORGANIZATIONNAME = nijino;
+				ORGANIZATIONNAME = YangYubin;
+				TargetAttributes = {
+					D643A85E16E1A83C00CDCFFB = {
+						DevelopmentTeam = 295AG8677N;
+						SystemCapabilities = {
+							com.apple.InterAppAudio = {
+								enabled = 0;
+							};
+						};
+					};
+				};
 			};
 			buildConfigurationList = D643A85A16E1A83C00CDCFFB /* Build configuration list for PBXProject "CircularProgressViewDemo" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -195,16 +191,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D61910CB17CFAA8900EAC2F1 /* play@2x.png in Resources */,
 				D643A86D16E1A83C00CDCFFB /* InfoPlist.strings in Resources */,
 				D643A87F16E1A83D00CDCFFB /* ViewController.xib in Resources */,
-				D63C808516E1D5D50004D76C /* In my song.mp3 in Resources */,
-				D637E9B717D374C90045466E /* Default-568h@2x.png in Resources */,
-				D61910CA17CFAA8900EAC2F1 /* pause@2x.png in Resources */,
-				D61910CC17CFAA8900EAC2F1 /* stop@2x.png in Resources */,
-				D680A89516E999440089BCC9 /* Icon.png in Resources */,
-				D680A89716E9994A0089BCC9 /* Icon@2x.png in Resources */,
-				D637E9B917D375490045466E /* Default@2x.png in Resources */,
+				D63C808516E1D5D50004D76C /* 我的歌声里.mp3 in Resources */,
+				D609F70E1803A606005244C0 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,11 +294,16 @@
 		D643A88316E1A83D00CDCFFB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CircularProgressViewDemo/CircularProgressViewDemo-Prefix.pch";
 				INFOPLIST_FILE = "CircularProgressViewDemo/CircularProgressViewDemo-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -316,11 +311,16 @@
 		D643A88416E1A83D00CDCFFB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CircularProgressViewDemo/CircularProgressViewDemo-Prefix.pch";
 				INFOPLIST_FILE = "CircularProgressViewDemo/CircularProgressViewDemo-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
