@@ -8,10 +8,11 @@
 //  http://nijino.cn
 
 #import "CircularProgressView.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface CircularProgressView ()<AVAudioPlayerDelegate>
 
-@property (nonatomic) NSTimer *timer;
+@property (nonatomic) CADisplayLink *displayLink;
 @property (nonatomic) AVAudioPlayer *player;//an AVAudioPlayer instance
 @property (nonatomic) CAShapeLayer *progressLayer;
 @property (assign, nonatomic) float progress;
@@ -105,7 +106,7 @@
     }
 }
 
-- (void)updateProgressCircle:(NSTimer *)timer{
+- (void)updateProgressCircle{
     //update progress value
     self.progress = (float) (self.player.currentTime / self.player.duration);
     if (self.delegate && [self.delegate conformsToProtocol:@protocol(CircularProgressViewDelegate)]) {
@@ -115,16 +116,20 @@
 
 - (void)play{
     if (!self.player.playing) {
-            //alloc timer,interval:0.1 second
-        self.timer = [NSTimer scheduledTimerWithTimeInterval:0.1f target:self selector:@selector(updateProgressCircle:) userInfo:nil repeats:YES];
+        if (!self.displayLink) {
+            self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(updateProgressCircle)];
+            self.displayLink.frameInterval = 6;
+            [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+        } else {
+            self.displayLink.paused = NO;
+        }
         [self.player play];
     }
 }
 
 - (void)pause{
     if (self.player.playing) {
-        [self.timer invalidate];
-        self.timer = nil;
+        self.displayLink.paused = YES;
         [self.player pause];
     }
 }
@@ -132,17 +137,15 @@
 - (void)stop{
     [self.player stop];
     self.player.currentTime = 0;
-    [self.timer invalidate];
-    self.timer = nil;
-    [self updateProgressCircle:nil];
+    [self.displayLink invalidate];
+    self.displayLink = nil;
 }
 
 #pragma mark AVAudioPlayerDelegate method
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
     if (flag) {
-        //invalid timer
-        [self.timer invalidate];
-        self.timer = nil;
+        [self.displayLink invalidate];
+        self.displayLink = nil;
         //restore progress value
         self.progress = 0;
         [self.delegate playerDidFinishPlaying];
@@ -153,7 +156,6 @@
     CGPoint point = [recognizer locationInView:self];
     self.angle = [self angleFromStartToPoint:point];
     self.player.currentTime = self.player.duration * (self.angle / (2 * M_PI));
-    [self updateProgressCircle:nil];
     if (!self.player.playing) {
         [self play];
     }
@@ -162,8 +164,7 @@
 
 - (void)handlePanGesture:(UIPanGestureRecognizer *)recognizer{
     if (recognizer.state == UIGestureRecognizerStateChanged) {
-        [self.timer invalidate];
-        self.timer = nil;
+        self.displayLink.paused = YES;
         CGPoint point = [recognizer locationInView:self];
         self.angle = [self angleFromStartToPoint:point];
         self.progress = self.angle/(M_PI * 2);
@@ -175,7 +176,8 @@
     else if (recognizer.state == UIGestureRecognizerStateEnded) {
         self.player.currentTime = self.player.duration * (self.angle / (2 * M_PI));
         if (!self.player.playing) [self play];
-        else self.timer = [NSTimer scheduledTimerWithTimeInterval:0.1f target:self selector:@selector(updateProgressCircle:) userInfo:nil repeats:YES];
+        else
+            self.displayLink.paused = NO;
         [self.delegate updatePlayOrPauseButton];
     }
 }

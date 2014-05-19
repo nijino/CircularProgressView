@@ -82,6 +82,9 @@ You can play,pause & stop audio by below methods declared in the header file `Ci
 You can find a demo project in this repository.    
 
 ##Version History  
+- version 1.5  
+Replace NSTimer with CADisplayLink.
+
 - version 1.4  
 Update to supporting Xcode5.
 Add animation to tap & drag gesture.
