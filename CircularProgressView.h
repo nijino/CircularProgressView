@@ -5,7 +5,7 @@
 //  Created by nijino saki on 13-3-2.
 //  Copyright (c) 2013年 nijino. All rights reserved.
 //  QQ:20118368
-//  http://nijino.cn
+//  http://www.nijino.cn
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
@@ -24,17 +24,17 @@
 
 @property (nonatomic) UIColor *backColor;
 @property (nonatomic) UIColor *progressColor;
-@property (copy, nonatomic) NSURL *audioPath;
-@property (assign, nonatomic) CGFloat lineWidth;
-@property (assign, nonatomic) NSTimeInterval duration;
-@property (assign, nonatomic) BOOL playOrPauseButtonIsPlaying;
-@property (assign, nonatomic) id <CircularProgressViewDelegate> delegate;
+@property (nonatomic) NSURL *audioURL;
+@property (nonatomic) CGFloat lineWidth;
+@property (nonatomic) NSTimeInterval duration;
+@property (nonatomic) BOOL playOrPauseButtonIsPlaying;
+@property (nonatomic) id <CircularProgressViewDelegate> delegate;
 
 - (id)initWithFrame:(CGRect)frame
           backColor:(UIColor *)backColor
       progressColor:(UIColor *)progressColor
           lineWidth:(CGFloat)lineWidth
-          audioPath:(NSURL *)path;
+           audioURL:(NSURL *)audioURL;
 
 - (void)play;
 - (void)pause;

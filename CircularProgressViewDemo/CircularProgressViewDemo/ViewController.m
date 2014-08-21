@@ -5,7 +5,7 @@
 //  Created by nijino saki on 13-3-2.
 //  Copyright (c) 2013年 nijino. All rights reserved.
 //  QQ:20118368
-//  http://nijino.cn
+//  http://www.nijino.cn
 
 #import "ViewController.h"
 #import "CircularProgressView.h"
@@ -34,7 +34,7 @@
                                                               green:135.0 / 255.0
                                                                blue:237.0 / 255.0
                                                               alpha:1.0];
-    self.circularProgressView.audioPath = [[NSBundle mainBundle] URLForResource:@"我的歌声里" withExtension:@"mp3"];
+    self.circularProgressView.audioURL = [[NSBundle mainBundle] URLForResource:@"我的歌声里" withExtension:@"mp3"];
     
     self.circularProgressView.lineWidth = 20;
     
@@ -42,13 +42,12 @@
     self.circularProgressView.delegate = self;
     //set initial timeLabel
     self.timeLabel.text = [NSString stringWithFormat:@"00:00/%@",[self formatTime:(int)self.circularProgressView.duration]];
-    NSString *songPath = [[NSBundle mainBundle] pathForResource:@"我的歌声里" ofType:@"mp3"];
-    self.songTitle.text = [[songPath lastPathComponent] stringByDeletingPathExtension];
+    self.songTitle.text = [[self.circularProgressView.audioURL.path lastPathComponent] stringByDeletingPathExtension];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    [[UIApplication sharedApplication]beginReceivingRemoteControlEvents];
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
     [self becomeFirstResponder];
 }
 
@@ -57,11 +56,6 @@
     [super viewDidUnload];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 - (IBAction)clickPlayOrPause:(ToggleButton *)sender {
     if (sender.on) {

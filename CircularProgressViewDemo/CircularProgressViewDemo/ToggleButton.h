@@ -2,17 +2,17 @@
 //  ToggleButton.h
 //  zwpg-ios
 //  开关按钮，继承自UIButton
-//  Created by 杨玉彬 on 13-4-27.
-//  Copyright (c) 2013年 nijino. All rights reserved.
+//  Created by nijino on 13-4-27.
+//  Copyright (c) 2013年. All rights reserved.
 //  QQ:20118368
-//  http://nijino.cn
+//  http://www.nijino.cn
 
 #import <UIKit/UIKit.h>
 
 @interface ToggleButton : UIButton
 
-@property (assign, nonatomic, getter = isOn) BOOL on;//开关变量
-@property (assign, nonatomic, getter = isToggleEnabled) BOOL toggleEnabled;//开关是否有效
+@property (nonatomic, getter = isOn) BOOL on;//开关变量
+@property (nonatomic, getter = isToggleEnabled) BOOL toggleEnabled;//开关是否有效
 @property (nonatomic) UIImage *onImage;//"开"状态图片
 @property (nonatomic) UIImage *offImage;//"关"状态图片
 @property (nonatomic) UIImage *onBackgroundImage;//"开"状态背景图片

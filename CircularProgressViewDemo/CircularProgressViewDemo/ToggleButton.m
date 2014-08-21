@@ -2,10 +2,10 @@
 //  ToggleButton.m
 //  zwpg-ios
 //  开关按钮，继承自UIButton
-//  Created by 杨玉彬 on 13-4-27.
+//  Created by nijino on 13-4-27.
 //  Copyright (c) 2013年 nijino. All rights reserved.
 //  QQ:20118368
-//  http://nijino.cn
+//  http://www.nijino.cn
 
 #import "ToggleButton.h"
 

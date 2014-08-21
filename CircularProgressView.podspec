@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "CircularProgressView"
-  s.version      = “1.5”
+  s.version      = "1.5"
   s.summary      = "A custom audio circular progress view for iOS."
   s.homepage     = "https://github.com/nijino/CircularProgressView"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }

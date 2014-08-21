@@ -5,7 +5,7 @@
 //  Created by nijino saki on 13-3-2.
 //  Copyright (c) 2013年 nijino. All rights reserved.
 //  QQ:20118368
-//  http://nijino.cn
+//  http://www.nijino.cn
 
 #import "CircularProgressView.h"
 #import <QuartzCore/QuartzCore.h>
@@ -15,8 +15,8 @@
 @property (nonatomic) CADisplayLink *displayLink;
 @property (nonatomic) AVAudioPlayer *player;//an AVAudioPlayer instance
 @property (nonatomic) CAShapeLayer *progressLayer;
-@property (assign, nonatomic) float progress;
-@property (assign, nonatomic) CGFloat angle;//angle between two lines
+@property (nonatomic) float progress;
+@property (nonatomic) CGFloat angle;//angle between two lines
 
 @end
 
@@ -26,14 +26,15 @@
           backColor:(UIColor *)backColor
       progressColor:(UIColor *)progressColor
           lineWidth:(CGFloat)lineWidth
-          audioPath:(NSURL *)path {
+           audioURL:(NSURL *)audioURL {
     self = [super initWithFrame:frame];
     if (self) {
         [self setUp];
         _backColor = backColor;
         _progressColor = progressColor;
         self.lineWidth = lineWidth;
-        _player = [[AVAudioPlayer alloc] initWithContentsOfURL:path error:nil];
+        _player = [[AVAudioPlayer alloc] initWithContentsOfURL:audioURL error:nil];
+        _audioURL = audioURL;
         _player.delegate = self;
         [_player prepareToPlay];
     }
@@ -65,20 +66,21 @@
     [self.layer addSublayer:_progressLayer];
 }
 
-- (void)setAudioPath:(NSURL *)audioPath{
-    if (audioPath) {
-        self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:audioPath error:nil];
+- (void)setAudioURL:(NSURL *)audioURL{
+    if (audioURL) {
+        self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:audioURL error:nil];
         self.player.delegate = self;
         self.duration = self.player.duration;
         [self.player prepareToPlay];
     }
+    _audioURL = audioURL;
 }
 
 - (CAShapeLayer *)createRingLayerWithCenter:(CGPoint)center radius:(CGFloat)radius lineWidth:(CGFloat)lineWidth color:(UIColor *)color {
-    UIBezierPath* smoothedPath = [UIBezierPath bezierPathWithArcCenter:CGPointMake(radius, radius) radius:radius startAngle:-M_PI_2 endAngle:(M_PI + M_PI_2) clockwise:YES];
+    UIBezierPath *smoothedPath = [UIBezierPath bezierPathWithArcCenter:CGPointMake(radius, radius) radius:radius startAngle:- M_PI_2 endAngle:(M_PI + M_PI_2) clockwise:YES];
     CAShapeLayer *slice = [CAShapeLayer layer];
     slice.contentsScale = [[UIScreen mainScreen] scale];
-    slice.frame = CGRectMake(center.x-radius, center.y-radius, radius*2, radius*2);
+    slice.frame = CGRectMake(center.x - radius, center.y - radius, radius * 2, radius * 2);
     slice.fillColor = [UIColor clearColor].CGColor;
     slice.strokeColor = color.CGColor;
     slice.lineWidth = lineWidth;
@@ -91,18 +93,12 @@
 - (void)setProgress:(float)progress{
     if (progress == 0) {
         self.progressLayer.hidden = YES;
-            //self.progressLayer.affineTransform = CGAffineTransformMakeScale(0.8, 0.8);
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             self.progressLayer.strokeEnd = 0;
-
         });
     }else {
         self.progressLayer.hidden = NO;
-            //self.progressLayer.affineTransform = CGAffineTransformIdentity;
-//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            self.progressLayer.strokeEnd = progress;
-            
-//        });
+        self.progressLayer.strokeEnd = progress;
     }
 }
 
@@ -136,6 +132,7 @@
 
 - (void)stop{
     [self.player stop];
+    self.progress = 0;
     self.player.currentTime = 0;
     [self.displayLink invalidate];
     self.displayLink = nil;
@@ -203,7 +200,7 @@
     CGFloat b = line1End.y - line1Start.y;
     CGFloat c = line2End.x - line2Start.x;
     CGFloat d = line2End.y - line2Start.y;
-    return acos(((a*c) + (b*d)) / ((sqrt(a*a + b*b)) * (sqrt(c*c + d*d))));
+    return acos(((a * c) + (b * d)) / ((sqrt(a * a + b * b)) * (sqrt(c * c + d * d))));
 }
 
 @end
