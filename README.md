@@ -114,7 +114,7 @@ Initial version.
 
 ## Contact 联系方式
 * Tech blog:<http://www.nijino.cn>
-* E-mail:[nijino_saki@163.com][mailto:nijino_saki@163.com]
+* E-mail:nijino_saki@163.com
 * Sina Weibo:[@3G杨叫兽][]
 * Twitter:[@yangyubin][]
 * Facebook:[nijino_saki][]
