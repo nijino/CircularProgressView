@@ -160,7 +160,7 @@
 				ORGANIZATIONNAME = YangYubin;
 				TargetAttributes = {
 					D643A85E16E1A83C00CDCFFB = {
-						DevelopmentTeam = 295AG8677N;
+						DevelopmentTeam = 7K3L4RY5L8;
 						SystemCapabilities = {
 							com.apple.InterAppAudio = {
 								enabled = 0;
@@ -302,6 +302,7 @@
 				GCC_PREFIX_HEADER = "CircularProgressViewDemo/CircularProgressViewDemo-Prefix.pch";
 				INFOPLIST_FILE = "CircularProgressViewDemo/CircularProgressViewDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CircularProgressViewDemo1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -319,6 +320,7 @@
 				GCC_PREFIX_HEADER = "CircularProgressViewDemo/CircularProgressViewDemo-Prefix.pch";
 				INFOPLIST_FILE = "CircularProgressViewDemo/CircularProgressViewDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CircularProgressViewDemo1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
