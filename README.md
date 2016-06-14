@@ -1,20 +1,20 @@
-![example pic][example pic]  
-##Introduction 简介
+# Introduction 简介
 A custom audio circular progress view for iOS.You can customlize its frame,background circle color & progress circle color and circle width as you wish.  
-一个iOS圆形进度条开源库，你可以定制它的大小、进度条背景色和前景色以及进度条的宽度。
+一个iOS圆形进度条开源库，你可以定制它的大小、进度条背景色和前景色以及进度条的宽度。  
+![example pic][example pic]
 
-##Latest Update 最新更新内容
+# Latest Update 最新更新内容
 Now you can drag the progress to precise location to where it should to play.  
 现在支持拖拽进度以便精确控制播放进度。
 
-##Installation 安装方法
+# Installation 安装方法
 1.Add AVFoundation.framework into your project.  
-1.在工程项目中加入AVFoundation.framework框架。
+1.在工程项目中加入AVFoundation.framework & QuartzCore.framework框架。
 
 2.Drop "CircularProgressView.h" & "CircularProgressView.m" into your project.  
-2.将“CircularProgressView.h“和”CircularProgressView.m“文件拖拽至工程目录。
+2.将“CircularProgressView.h”和“CircularProgressView.m”文件拖拽至工程目录。
 
-##Usage 使用方法
+# Usage 使用方法
 First in your ViewController import the header file `CircularProgressView.h`, and create a CircularProgressView property to keep a reference:  
 首先在你的ViewController中导入`CircularProgressView.h`头文件并且新建一个圆形进度条属性来作为一个引用:  
 `@property (nonatomic) CircularProgressView *circularProgressView;`  
@@ -28,7 +28,7 @@ Drop a UIView object into your xib or storyboard file, modify its class name to 
 ![xib example][xib example]  
 then define circular progress view propertys in viewDidLoad method like this:  
 之后如下方式在viewDidLoad方法中定义圆形进度条的属性:
-
+```obj-c
     self.circularProgressView.backColor = [UIColor colorWithRed:236.0 / 255.0
                                                           green:236.0 / 255.0
                                                            blue:236.0 / 255.0
@@ -38,15 +38,15 @@ then define circular progress view propertys in viewDidLoad method like this:
                                                                blue:237.0 / 255.0
                                                               alpha:1.0];
     self.circularProgressView.audioURL = [[NSBundle mainBundle] URLForResource:@"我的歌声里" withExtension:@"mp3"];
-    
+
     self.circularProgressView.lineWidth = 20;
-    
+
     //set CircularProgressView delegate
     self.circularProgressView.delegate = self;
-
+```
 2.To create the object using codes like this:  
 2.用写代码的方式建立对象:
-
+```obj-c
     //get a audio path
     NSURL *audioURL = [[NSBundle mainBundle] URLForResource:@"我的歌声里" withExtension:@"mp3"];
     //set back color & progress color
@@ -69,20 +69,20 @@ then define circular progress view propertys in viewDidLoad method like this:
     self.circularProgressView.delegate = self;
     //add CircularProgressView
     [self.view addSubview:self.circularProgressView];
-
-##Methods 方法
+```
+# API 提供接口
 You can play,pause & stop audio by below methods declared in the header file `CircularProgressView.h`  
 你可以通过如下方法播放、暂停或者停止音频，这些方法声明在`CircularProgressView.h`头文件中:
-
-    - (void)play;
-    - (void)pause;
-    - (void)stop;
-
-##Demo 示例
+```obj-c
+- (void)play;
+- (void)pause;
+- (void)stop;
+```
+# Demo 示例
 You can find a demo project in this repository.  
 你可以在这个开源库中找到一个示例工程。
 
-##Version History  版本信息
+# Version History  版本信息
 * version 1.5  
 Replace NSTimer with CADisplayLink.  
 用CADisplayLink替换NSTimer。
@@ -108,16 +108,16 @@ Make code easy to read,add licenece and pics.
 Initial version.  
 初始版本。
 
-##Requirements 系统要求
+# Requirements 系统要求
 - iOS >= 4.3
 - ARC
 
-## Contact 联系方式
-* Tech blog:<http://www.nijino.cn>
-* E-mail:nijino_saki@163.com
-* Sina Weibo:[@3G杨叫兽][]
-* Twitter:[@yangyubin][]
-* Facebook:[nijino_saki][]
+# Contact 联系方式
+* Tech blog: <http://www.nijino.cn>
+* E-mail: nijino_saki@163.com
+* Sina Weibo: [@3G杨叫兽][]
+* Twitter: [@yangyubin][]
+* Facebook: [nijino_saki][]
 
 [example pic]:http://ww3.sinaimg.cn/large/540e407ajw1ejko11y21cg208s0gc7a3.gif "example pic"
 [xib example]:http://ww2.sinaimg.cn/large/540e407ajw1ejko543x1zj207f02bmx3.jpg "xib example"
