@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A479968D213FC7280093E9F6 /* CircularProgressViewDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A479968C213FC7280093E9F6 /* CircularProgressViewDemoTests.m */; };
 		D609F70E1803A606005244C0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D609F70D1803A606005244C0 /* Images.xcassets */; };
 		D63C807F16E1C4C50004D76C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D63C807E16E1C4C50004D76C /* AVFoundation.framework */; };
 		D63C808516E1D5D50004D76C /* 我的歌声里.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D63C808416E1D5D50004D76C /* 我的歌声里.mp3 */; };
@@ -23,7 +24,20 @@
 		D6D6DF2618B7D5CA0036FD1C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D6DF2518B7D5CA0036FD1C /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		A479968F213FC7280093E9F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D643A85716E1A83C00CDCFFB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D643A85E16E1A83C00CDCFFB;
+			remoteInfo = CircularProgressViewDemo;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		A479968A213FC7280093E9F6 /* CircularProgressViewDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CircularProgressViewDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A479968C213FC7280093E9F6 /* CircularProgressViewDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircularProgressViewDemoTests.m; sourceTree = "<group>"; };
+		A479968E213FC7280093E9F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D609F70D1803A606005244C0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D63C807E16E1C4C50004D76C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D63C808416E1D5D50004D76C /* 我的歌声里.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "我的歌声里.mp3"; sourceTree = "<group>"; };
@@ -48,6 +62,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A4799687213FC7280093E9F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D643A85C16E1A83C00CDCFFB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -63,11 +84,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A479968B213FC7280093E9F6 /* CircularProgressViewDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				A479968C213FC7280093E9F6 /* CircularProgressViewDemoTests.m */,
+				A479968E213FC7280093E9F6 /* Info.plist */,
+			);
+			path = CircularProgressViewDemoTests;
+			sourceTree = "<group>";
+		};
 		D643A85616E1A83C00CDCFFB = {
 			isa = PBXGroup;
 			children = (
 				D643A88816E1B08500CDCFFB /* CircularProgressView */,
 				D643A86816E1A83C00CDCFFB /* CircularProgressViewDemo */,
+				A479968B213FC7280093E9F6 /* CircularProgressViewDemoTests */,
 				D643A86116E1A83C00CDCFFB /* Frameworks */,
 				D643A86016E1A83C00CDCFFB /* Products */,
 			);
@@ -77,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				D643A85F16E1A83C00CDCFFB /* CircularProgressViewDemo.app */,
+				A479968A213FC7280093E9F6 /* CircularProgressViewDemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -133,6 +165,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A4799689213FC7280093E9F6 /* CircularProgressViewDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A4799691213FC7280093E9F6 /* Build configuration list for PBXNativeTarget "CircularProgressViewDemoTests" */;
+			buildPhases = (
+				A4799686213FC7280093E9F6 /* Sources */,
+				A4799687213FC7280093E9F6 /* Frameworks */,
+				A4799688213FC7280093E9F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A4799690213FC7280093E9F6 /* PBXTargetDependency */,
+			);
+			name = CircularProgressViewDemoTests;
+			productName = CircularProgressViewDemoTests;
+			productReference = A479968A213FC7280093E9F6 /* CircularProgressViewDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		D643A85E16E1A83C00CDCFFB /* CircularProgressViewDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D643A88216E1A83D00CDCFFB /* Build configuration list for PBXNativeTarget "CircularProgressViewDemo" */;
@@ -159,6 +209,12 @@
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = YangYubin;
 				TargetAttributes = {
+					A4799689213FC7280093E9F6 = {
+						CreatedOnToolsVersion = 9.4.1;
+						DevelopmentTeam = 7K3L4RY5L8;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D643A85E16E1A83C00CDCFFB;
+					};
 					D643A85E16E1A83C00CDCFFB = {
 						DevelopmentTeam = 7K3L4RY5L8;
 						SystemCapabilities = {
@@ -182,11 +238,19 @@
 			projectRoot = "";
 			targets = (
 				D643A85E16E1A83C00CDCFFB /* CircularProgressViewDemo */,
+				A4799689213FC7280093E9F6 /* CircularProgressViewDemoTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A4799688213FC7280093E9F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D643A85D16E1A83C00CDCFFB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -201,6 +265,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A4799686213FC7280093E9F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A479968D213FC7280093E9F6 /* CircularProgressViewDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D643A85B16E1A83C00CDCFFB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -214,6 +286,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A4799690213FC7280093E9F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D643A85E16E1A83C00CDCFFB /* CircularProgressViewDemo */;
+			targetProxy = A479968F213FC7280093E9F6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D643A86B16E1A83C00CDCFFB /* InfoPlist.strings */ = {
@@ -235,6 +315,70 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		A4799692213FC7280093E9F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 7K3L4RY5L8;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = CircularProgressViewDemoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = yyb.CircularProgressViewDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CircularProgressViewDemo.app/CircularProgressViewDemo";
+			};
+			name = Debug;
+		};
+		A4799693213FC7280093E9F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 7K3L4RY5L8;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = CircularProgressViewDemoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = yyb.CircularProgressViewDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CircularProgressViewDemo.app/CircularProgressViewDemo";
+			};
+			name = Release;
+		};
 		D643A88016E1A83D00CDCFFB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -365,6 +509,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A4799691213FC7280093E9F6 /* Build configuration list for PBXNativeTarget "CircularProgressViewDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4799692213FC7280093E9F6 /* Debug */,
+				A4799693213FC7280093E9F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D643A85A16E1A83C00CDCFFB /* Build configuration list for PBXProject "CircularProgressViewDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
