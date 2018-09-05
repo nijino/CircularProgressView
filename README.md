@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/nijino/CircularProgressView.svg?branch=master)](https://travis-ci.com/nijino/CircularProgressView)
 # Introduction 简介
 A custom audio circular progress view for iOS.You can customlize its frame,background circle color & progress circle color and circle width as you wish.  
 一个iOS圆形进度条开源库，你可以定制它的大小、进度条背景色和前景色以及进度条的宽度。  
@@ -113,14 +114,14 @@ Initial version.
 - ARC
 
 # Contact 联系方式
-* Tech blog: <http://www.nijino.cn>
+* Tech blog: <https://blog.csdn.net/nijino_saki>
 * E-mail: nijino_saki@163.com
-* Sina Weibo: [@3G杨叫兽][]
+* Sina Weibo: [@iOS杨叫兽][]
 * Twitter: [@yangyubin][]
 * Facebook: [nijino_saki][]
 
 [example pic]:http://ww3.sinaimg.cn/large/540e407ajw1ejko11y21cg208s0gc7a3.gif "example pic"
 [xib example]:http://ww2.sinaimg.cn/large/540e407ajw1ejko543x1zj207f02bmx3.jpg "xib example"
-[@3G杨叫兽]:http://www.weibo.com/nijinosaki "3G杨叫兽"
+[@iOS杨叫兽]:http://www.weibo.com/nijinosaki "iOS杨叫兽"
 [@yangyubin]:https://twitter.com/yangyubin "欢迎在twitter上关注我"
 [nijino_saki]:http://www.facebook.com/nijinosaki1982 "欢迎在facebook上关注我"
