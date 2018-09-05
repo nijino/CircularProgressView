@@ -51,12 +51,6 @@
     [self becomeFirstResponder];
 }
 
-- (void)viewDidUnload {
-    [self setTimeLabel:nil];
-    [super viewDidUnload];
-}
-
-
 - (IBAction)clickPlayOrPause:(ToggleButton *)sender {
     if (sender.on) {
         [self.circularProgressView play];
