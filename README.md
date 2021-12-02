@@ -1,5 +1,5 @@
 
-![[object Object]](https://socialify.git.ci/nijino/CircularProgressView/image?description=1&forks=1&language=1&name=1&owner=1&pattern=Solid&pulls=1&stargazers=1&theme=Light)
+![[object Object]](https://socialify.git.ci/nijino/CircularProgressView/image?description=1&forks=1&name=1&owner=1&pattern=Solid&pulls=1&stargazers=1&theme=Light)
 
 [![Build Status](https://travis-ci.com/nijino/CircularProgressView.svg?branch=master)](https://travis-ci.com/nijino/CircularProgressView)
 # Introduction
