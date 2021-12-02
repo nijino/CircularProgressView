@@ -1,3 +1,5 @@
+
+<img src="https://socialify.git.ci/nijino/CircularProgressView/image?description=1&forks=1&language=1&name=1&owner=1&pattern=Solid&pulls=1&stargazers=1&theme=Light" alt="[object Object]" width="640" height="320" />
 [![Build Status](https://travis-ci.com/nijino/CircularProgressView.svg?branch=master)](https://travis-ci.com/nijino/CircularProgressView)
 # Introduction
 A custom audio circular progress view for iOS.You can customlize its frame,background circle color & progress circle color and circle width as you wish.  
